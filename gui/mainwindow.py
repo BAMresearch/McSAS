@@ -36,6 +36,13 @@ Output files start with the base name of the input file. They have the current d
 
 CHANGESTEXT = (u"""
 
+Changes in 0.0.11:
+- distribution statistics log output and writing to stats file
+- plain SAS evaluation (no fit) if no param is active
+- all output files with extensions and storing in settings
+- configuration file now *.cfg
+- single start/stop button
+
 Changes in 0.0.10:
 - data file listing widget on top with short info
   - double-click uses sphere size est. for sphere model radius range
