@@ -284,7 +284,8 @@ class MainWindow(MainWindowBase):
     _loadedData = None
 
     def __init__(self, parent = None):
-        MainWindowBase.__init__(self, version, parent) # calls setupUi() and restoreSettings()
+        # calls setupUi() and restoreSettings()
+        MainWindowBase.__init__(self, version, parent)
 
     def setupUi(self, *args):
         # called in MainWindowBase.__init__()
@@ -376,6 +377,7 @@ class MainWindow(MainWindowBase):
         self.propWidget.selectModel()
         self.fileWidget.loadData(self.getCommandlineArguments())
         self.onStartStopClick(False)
+        self.logWidget.scrollToBottom()
 
     def onStartStopClick(self, checked):
         if checked:
