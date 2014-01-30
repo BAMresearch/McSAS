@@ -11,6 +11,28 @@ import subprocess
 from cx_Freeze import setup, Executable
 from gui.version import version
 
+def get7ZipPath():
+	"""Retrieves 7-Zip install path and binary from Windows Registry.
+	This way, we do not rely on PATH containing 7-Zip.
+	"""
+	path = None
+	import win32api, win32con
+	for key in (win32con.HKEY_LOCAL_MACHINE, win32con.HKEY_CURRENT_USER):
+		try:
+			key = win32api.RegConnectRegistry(None, key)
+			key = win32api.RegOpenKeyEx(key, r"SOFTWARE\7-Zip")
+			path, dtype = win32api.RegQueryValueEx(key, "Path")
+			path = os.path.abspath(os.path.join(path, "7z.exe"))
+		except:
+			pass
+	return path
+
+# 7z default on windows
+SEVENZIP = get7ZipPath()
+if not os.path.isfile(SEVENZIP):
+    sys.exit("7-Zip: '{path}' not found!".format(path = SEVENZIP))
+
+# target (temp) dir for mcsas package
 TARGETDIR = "{0}-{1}".format(version.name(), version.number())
 
 BASE = None
@@ -31,7 +53,7 @@ BUILDOPTIONS = dict(
     compressed = False,
     include_files = INCLUDEFILES,
     packages = [],
-    includes = ["sip", "PyQt4.QtCore", "PyQt4.QtGui", "PyQt4.QtSvg",
+    includes = ["PySide", "PySide.QtCore", "PySide.QtGui", "PySide.QtSvg",
                 "multiprocessing", "cutesnake",
                 "scipy.sparse.csgraph._validation",
                 "scipy.sparse.linalg.dsolve.umfpack", "scipy.integrate.vode",
@@ -70,7 +92,7 @@ setup(
     executables = [Executable("gui.py", base = BASE,
                               targetName=TARGETNAME)])
 
-RETCODE = subprocess.call(["7z", "a", "-t7z", "-mx=9",
+RETCODE = subprocess.call([SEVENZIP, "a", "-t7z", "-mx=9",
                            TARGETDIR+".7z", TARGETDIR])
 
 # vim: set ts=4 sw=4 sts=4 tw=0:
