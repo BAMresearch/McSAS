@@ -193,6 +193,10 @@ class LogWidget(QTextBrowser, ContextMenuWidget):
         else:
             scroll.setValue(scroll.maximum())
 
+    def scrollToBottom(self):
+        scroll = self.verticalScrollBar()
+        scroll.setValue(scroll.maximum())
+
     def append(self, text):
         """Appends a new line of text."""
         wasEmpty = self.document().isEmpty()
