@@ -26,15 +26,16 @@ Several form factors have been included in the package, including:
 - Densely packed spheres (LMA-PY structure factor). 
 
 ### Current status ###
-The package is currently in v1.0 stable state, no major issues remain with this version and it should run on a Python 2.7 installation (also works on Enthough Canopy Python).
+
+The package should run on a Python 3 installation, for example an Anaconda environment.
 Standalone packages are available for Windows, Linux and Mac OS X, make sure to get the latest release. 
-The most up-to-date branch is the "restructuring"-branch, and runs on Windows, Linux and Mac OS X. 
 A quick start guide and example data is included in the "doc"-directory that comes with the distribution. 
 
 ### Requirements ###
+
 To run McSAS from the source code repository (i.e. using a Python interpreter), the following items are required:
 
-- [Python (latest 2.7 branch)](https://www.python.org/downloads/), with the following packages:
+- [Python 3](https://www.python.org/downloads/), with the following packages:
 
 - [Numpy](http://www.scipy.org/scipylib/download.html) 
 
@@ -42,9 +43,10 @@ To run McSAS from the source code repository (i.e. using a Python interpreter), 
 
 - [matplotlib](http://matplotlib.org/downloads.html) 
 
-- [PySide](http://qt-project.org/wiki/PySide) 
+- [PySide2](https://pypi.org/project/PySide2/) 
 
 ### Installation on systems with a working Python distribution ###
+
 For those unfamiliar with the Git versioning system, it is recommended to start by installing Altassian SourceTree (and perhaps reading [Bitbucket 101](https://confluence.atlassian.com/display/BITBUCKET/Bitbucket+101) ). 
 This is a GUI around the Git versioning system that simplifies the usage and allows you to get started quickly. 
 
