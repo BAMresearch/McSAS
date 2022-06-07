@@ -52,7 +52,7 @@ and a somewhat easy to use graphical user interface [GitHub Desktop](https://des
 along with [extensive documentation about it](https://docs.github.com/en/desktop).
 This is a GUI around the Git versioning system that simplifies the usage and allows you to get started quickly. 
 
-Use the "clone" button in the top left area of this page to download a copy of the latest source code tree.
+Use the green "Code" button in the top left area of this page to download a copy of the latest source code tree.
 Following this, McSAS can be started from a terminal window, as shown below:
 
 ### Cloning and Starting McSAS from a terminal window
@@ -74,7 +74,7 @@ python3 -m McSAS
 Alternatively, on Windows systems, double-clicking the "main.py" file should start McSAS with the primary Python interpreter as well.
 
 ### Standalone packages ###
-Standalone packages are available in the [downloads](https://bitbucket.org/pkwasniew/mcsas/downloads) section of this page. 
+Standalone packages are available in the [Releases](https://bitbucket.org/pkwasniew/mcsas/downloads) section of this page in the right pane. 
 These are available for Mac OS X (tested on 10.6, 10.8 and 10.10), Windows and Linux. 
 These do not require any additional software to be installed on the host computer. 
 
