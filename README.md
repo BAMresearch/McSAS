@@ -47,20 +47,31 @@ To run McSAS from the source code repository (i.e. using a Python interpreter), 
 
 ### Installation on systems with a working Python distribution ###
 
-For those unfamiliar with the Git versioning system, it is recommended to start by installing Altassian SourceTree (and perhaps reading [Bitbucket 101](https://confluence.atlassian.com/display/BITBUCKET/Bitbucket+101) ). 
+For those unfamiliar with the Git versioning system, there is [helpful reading material provided by GitHub](https://github.com/git-guides)
+and a somewhat easy to use graphical user interface [GitHub Desktop](https://desktop.github.com)
+along with [extensive documentation about it](https://docs.github.com/en/desktop).
 This is a GUI around the Git versioning system that simplifies the usage and allows you to get started quickly. 
 
-Using the "clone" button on the top left side of this page, you can download a copy of the latest version. 
-Make sure when downloading to select the "restructuring"-branch. 
-Following this, McSAS can be started on Unix(-like) systems by opening a terminal window, changing directory to the location of McSAS, and typing 
+Use the "clone" button in the top left area of this page to download a copy of the latest source code tree.
+Following this, McSAS can be started from a terminal window, as shown below:
 
+### Cloning and Starting McSAS from a terminal window
+
+Typically, the terminal window is opened in the current users home directory.
+You can change the current directory to `another/path` (which should exist) by entering
 ```
-#!shell
-
-$ ./main.py
+cd another/path
+```
+To download a copy of the McSAS source code into the new directory `McSAS` enter
+```
+$ git clone https://github.com/BAMresearch/McSAS.git
+```
+To launch and start the McSAS GUI calling it like a Python module should be sufficient:
+```
+python3 -m McSAS
 ```
 
-On Windows systems, double-clicking the "main.py" file should open python and start McSAS.
+Alternatively, on Windows systems, double-clicking the "main.py" file should start McSAS with the primary Python interpreter as well.
 
 ### Standalone packages ###
 Standalone packages are available in the [downloads](https://bitbucket.org/pkwasniew/mcsas/downloads) section of this page. 
