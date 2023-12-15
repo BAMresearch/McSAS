@@ -36,14 +36,18 @@ A quick start guide and example data is included in the "doc"-directory that com
 To run McSAS from the source code repository (i.e. using a Python interpreter), the following items are required:
 
 - [Python 3](https://www.python.org/downloads/), with the following packages:
+- [Numpy](http://www.scipy.org/scipylib/download.html)
+- [Scipy](http://www.scipy.org/scipylib/download.html)
+- [matplotlib](http://matplotlib.org/downloads.html)
+- [PySide2](https://pypi.org/project/PySide2/)
 
-- [Numpy](http://www.scipy.org/scipylib/download.html) 
+#### Linux
 
-- [Scipy](http://www.scipy.org/scipylib/download.html) 
-
-- [matplotlib](http://matplotlib.org/downloads.html) 
-
-- [PySide2](https://pypi.org/project/PySide2/) 
+On Linux, there might also be the [ImageTk module](https://pillow.readthedocs.io/en/stable/reference/ImageTk.html) required.
+Install it like this on Debian/Ubuntu based systems:
+```
+sudo apt-get install python3-pil python3-pil.imagetk
+```
 
 ### Installation on systems with a working Python distribution ###
 
@@ -57,19 +61,29 @@ Following this, McSAS can be started from a terminal window, as shown below:
 
 ### Cloning and Starting McSAS from a terminal window
 
-Typically, the terminal window is opened in the current users home directory.
-You can change the current directory to `another/path` (which should exist) by entering
-```
-cd another/path
-```
-To download a copy of the McSAS source code into the new directory `McSAS` enter
-```
-$ git clone https://github.com/BAMresearch/McSAS.git
-```
-To launch and start the McSAS GUI calling it like a Python module should be sufficient:
-```
-python3 -m McSAS
-```
+1. Open a terminal window. Typically, it is opened in the current users home directory.
+  You can change the current directory to `another/path` (which should exist) by entering
+    ```
+    cd another/path
+    ```
+2. Download a copy of the McSAS source code into the new directory `McSAS` using GIT:  
+    (on Windows, [download & install GIT from here](https://git-scm.com/download/win))
+   
+    ```
+    $ git clone https://github.com/BAMresearch/McSAS.git
+    ```
+    
+4. Change the current directory to the `src` subfolder:
+   
+    ```
+    cd McSAS/src
+    ```
+    
+6. Launch and start the McSAS GUI by calling it like a Python module:
+   
+    ```
+    python3 -m McSAS
+    ```
 
 Alternatively, on Windows systems, double-clicking the "main.py" file should start McSAS with the primary Python interpreter as well.
 
