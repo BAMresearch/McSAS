@@ -82,7 +82,7 @@ Following this, McSAS can be started from a terminal window, as shown below:
 6. Launch and start the McSAS GUI by calling it like a Python module:
    
     ```
-    python3 -m McSAS
+    python3 -m mcsas
     ```
 
 Alternatively, on Windows systems, double-clicking the "main.py" file should start McSAS with the primary Python interpreter as well.
