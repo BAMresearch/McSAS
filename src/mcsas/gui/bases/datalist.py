@@ -3,9 +3,10 @@
 
 import os.path
 import logging
-import collections
 import sys
 import traceback
+
+from ...utils.collections import Callable
 
 try:
     # make all modifications to sys (below) local to this module
@@ -469,7 +470,7 @@ class DataList(QWidget, DropWidget, ContextMenuWidget):
         updateResult = []
         # check provided stop function
         if (stopFunc is not None and
-            not isinstance(stopFunc, collections.Callable)):
+            not isinstance(stopFunc, Callable)):
             stopFunc = None
         # call provided functions which can raise exceptions
         errorOccured = False # raise error after processing all items

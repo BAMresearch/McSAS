@@ -5,10 +5,11 @@
 Utils for testing something.
 """
 
-import collections
 import platform
 import numpy
 import sys
+
+from ..utils.collections import Sequence, Mapping, Set, Callable
 
 try:
     from gui.qt import QtCore
@@ -24,7 +25,7 @@ def isString(obj):
 
 def isList(obj):
     return (not isString(obj) and
-            (isinstance(obj, collections.Sequence)
+            (isinstance(obj, Sequence)
              or (isinstance(obj, numpy.ndarray)
                  and obj.ndim < 2)))
 
@@ -40,10 +41,10 @@ def isNonEmptyString(obj):
     return (isString(obj) and len(obj) > 0)
 
 def isMap(obj):
-    return isinstance(obj, collections.Mapping)
+    return isinstance(obj, Mapping)
 
 def isSet(obj):
-    return isinstance(obj, collections.Set)
+    return isinstance(obj, Set)
 
 def isNumber(obj):
     # current implementation does not account for all possibilities.
@@ -70,10 +71,7 @@ def isInteger(obj):
     return isinstance(obj, int)
 
 def isCallable(obj):
-    try: # python 3
-        return isinstance(obj, collections.abc.Callable)
-    except AttributeError: # python 2
-        return isinstance(obj, collections.Callable)
+    return isinstance(obj, Callable)
 
 # environment tests
 
