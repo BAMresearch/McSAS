@@ -384,7 +384,7 @@ class MainWindow(MainWindowBase):
     def _updateWidgetsFinally(self):
         for w in self.findChildren(AlgorithmWidget):
             w.updateAll()
-        if (not len(self.statsWidget.data())
+        if (not len(self.statsWidget.data()) and self.modelWidget.model
             and len(self.modelWidget.model.activeParams())):
             # make sure there is an histogram range defined,
             # otherwise ask the user for one

@@ -288,7 +288,7 @@ class RangeList(DataList, AppSettings):
         self.updateHistograms()
 
     def _getParams(self):
-        return self._calculator.model.params()
+        return self._calculator.model.params() if self._calculator.model else []
 
     def updateHistograms(self):
         """Called after UI update by sigBackendUpdated from an AlgorithmWidget."""

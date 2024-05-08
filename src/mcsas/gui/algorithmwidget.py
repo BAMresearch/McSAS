@@ -218,8 +218,9 @@ class AlgorithmWidget(SettingsWidget, AppSettings):
 
     def updateAll(self):
         """Called in MainWindow on calculation start."""
-        for p in self.algorithm.params():
-            self.updateParam(p, emitBackendUpdated = False)
+        if self.algorithm:
+            for p in self.algorithm.params():
+                self.updateParam(p, emitBackendUpdated = False)
         # emit sigBackendUpdated after updating all widgets,
         # because they may be removed in the meantime
         self.sigBackendUpdated.emit()
