@@ -1,0 +1,6 @@
+future
+numpy
+scipy
+matplotlib
+h5py
+PySide2
