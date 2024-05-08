@@ -243,7 +243,7 @@ class AlgorithmWidget(SettingsWidget, AppSettings):
     @staticmethod
     def _makeLabel(name):
         lbl = QLabel(name + ":")
-        lbl.setAlignment(Qt.AlignLeft|Qt.AlignVCenter)
+        lbl.setAlignment(Qt.Alignment(int(Qt.AlignLeft) | int(Qt.AlignVCenter)))
         lbl.setWordWrap(True)
         return lbl
 
@@ -268,7 +268,7 @@ class AlgorithmWidget(SettingsWidget, AppSettings):
             widget.setCheckable(True)
             widget.setChecked(value)
         else:
-            widget.setAlignment(Qt.AlignRight|Qt.AlignVCenter)
+            widget.setAlignment(Qt.Alignment(int(Qt.AlignRight)|int(Qt.AlignVCenter)))
             if isList(minmax) and len(minmax):
                 widget.setMinimum(min(minmax))
                 widget.setMaximum(max(minmax))

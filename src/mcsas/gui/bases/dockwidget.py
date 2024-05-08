@@ -14,8 +14,7 @@ class DockWidget(QDockWidget):
     
     def __init__(self, parent, childWidgetType, *args, **kwargs):
         QDockWidget.__init__(self, parent)
-        self.setFeatures(QDockWidget.DockWidgetFloatable|
-                         QDockWidget.DockWidgetMovable)
+        self.features = QDockWidget.DockWidgetFloatable | QDockWidget.DockWidgetMovable
         self.setAllowedAreas(Qt.AllDockWidgetAreas)
         childWidget = self._setupChildWidget(childWidgetType, *args, **kwargs)
         self.setWidget(childWidget)

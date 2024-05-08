@@ -92,9 +92,7 @@ class LogWidget(QTextBrowser, ContextMenuWidget):
         self.appversion = appversion
         self.setUndoRedoEnabled(False)
         self.setReadOnly(True)
-        self.setTextInteractionFlags(
-            Qt.LinksAccessibleByMouse|
-            Qt.TextSelectableByMouse)
+        self.textInteractionFlags = Qt.LinksAccessibleByMouse | Qt.TextSelectableByMouse
         try:
             self.setOpenExternalLinks(True)
             self.anchorClicked.connect(QDesktopServices.openUrl)

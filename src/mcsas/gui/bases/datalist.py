@@ -420,7 +420,7 @@ class DataList(QWidget, DropWidget, ContextMenuWidget):
         self.listWidget.addTopLevelItem(DataItem(data))
         item = self.listWidget.topLevelItem(len(self)-1)
         if not self._nestedItems:
-            item.setFlags(item.flags() & ~Qt.ItemIsDropEnabled)
+            item.setFlags(Qt.ItemFlags(int(item.flags()) & ~int(Qt.ItemIsDropEnabled)))
         return item
 
     def topLevelItems(self):
