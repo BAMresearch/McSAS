@@ -687,7 +687,7 @@ class McSAS(AlgorithmBase):
         pkwargs = dict(axisMargin = axisMargin, outputFilename = outputFilename,
                        modelData = modelData,
                        autoClose = autoClose, logToFile = False)
-        if isMac():
+        if True: #isMac():
             PlotResults(*pargs, **pkwargs)
         else:
             from multiprocessing import Process, Queue

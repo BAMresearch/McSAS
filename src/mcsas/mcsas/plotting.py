@@ -17,20 +17,20 @@ from ..main import makeAbsolutePath
 from ..dataobj import SASData
 
 # set up matplotlib.pyplot, do this *before* importing pyplot
-try:
-    # actually, we're using the TkAgg backend via matplotlibrc (Windows/Linux)
-    # otherwise it crashes because of multiple GUI threads ... (only one allowed)
-    import PySide # verify/test that we have pyside
-    if isMac():
-        matplotlib.rcParams['backend'] = 'Qt4Agg'
-        matplotlib.rcParams['backend.qt4'] = 'PySide'
-    else:
-        matplotlib.rcParams['backend'] = 'TkAgg'
-except ImportError:
-    pass # no pyside
+#try:
+#    # actually, we're using the TkAgg backend via matplotlibrc (Windows/Linux)
+#    # otherwise it crashes because of multiple GUI threads ... (only one allowed)
+#    import PySide # verify/test that we have pyside
+#    if isMac():
+#        matplotlib.rcParams['backend'] = 'Qt4Agg'
+#        matplotlib.rcParams['backend.qt4'] = 'PySide'
+#    else:
+#        matplotlib.rcParams['backend'] = 'TkAgg'
+#except ImportError:
+#    pass # no pyside
 
-if not isMac():
-    matplotlib.rcParams['backend'] = 'TkAgg'
+#if not isMac():
+#    matplotlib.rcParams['backend'] = 'WebAgg'
 
 import matplotlib.font_manager as fm
 from matplotlib import gridspec
