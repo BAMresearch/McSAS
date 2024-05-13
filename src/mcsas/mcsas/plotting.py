@@ -100,7 +100,7 @@ class PlotResults(object):
     # although the matplotlib version is the same for both (1.3.1)
     _infoTextFontSize = 10 # 'small'
     _infoText = {
-            "fontsize" : _infoTextFontSize, "size" : _infoTextFontSize,
+            "size" : _infoTextFontSize,
             "horizontalalignment" : 'center',
             "multialignment" : 'center',
             "verticalalignment" : 'center'
