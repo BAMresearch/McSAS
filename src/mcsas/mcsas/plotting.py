@@ -145,7 +145,7 @@ class PlotResults(object):
         self._SC = self._result.get('scaling', (0., 0.))
 
         # set plot font
-        fontFamilyArial = ["Arial", "Bitstream Vera Sans", "sans-serif"]
+        fontFamilyArial = ["sans-serif"]
         self._plotfont = fm.FontProperties(family = fontFamilyArial)
         # DejaVu shows UTF8 superscript minus properly
         fontPath = makeAbsolutePath("resources/dejavuserif.ttf")
