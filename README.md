@@ -53,20 +53,37 @@ Following this, McSAS can be started from a terminal window, as shown below:
 2. Download a copy of the McSAS source code into the new directory `McSAS` using GIT:  
     (on Windows, [download & install GIT from here](https://git-scm.com/download/win))
     ```
-    $ git clone https://github.com/BAMresearch/McSAS.git
+    git clone https://github.com/BAMresearch/McSAS.git
     ```
-### Linux
+### Linux/Ubuntu
 
-1. On Linux, there might also be the [ImageTk module](https://pillow.readthedocs.io/en/stable/reference/ImageTk.html) required.
-   Install it like this on Debian/Ubuntu based systems:
+1. Make sure, Python 3.11, *GIT* and *Qt5* is installed:
     ```
-    sudo apt install python3-pil.imagetk
+    sudo apt install python3.11 python3.11-venv git libqt5widgets5
     ```
-2. Install the required packages
+2. Create a python virtual environment (venv) based on Python 3.11 for McSAS, in your home dir, for example:
     ```
-    cd McSAS
+    python3.11 -m venv --system-site-packages --symlinks ~/.py11env
+    ```
+3. Activate the new venv:
+    ```
+    source ~/.py11env/bin/activate
+    ```
+4. Clone the McSAS source tree to your local home directory:
+    ```
+    git clone https://github.com/BAMresearch/McSAS.git ~/mcsas
+    ```
+4. Install additional Python packages needed by McSAS:
+    ```
+    cd ~/mcsas
     pip install -r requirements.txt
     ```
+5. Run McSAS from its `src` folder:
+    ```
+    cd ~/mcsas/src
+    python -m mcsas
+    ```
+
 ### Windows
 
 1. Install the latest offline installer of the Qt5 series with defaults from here: https://www.qt.io/offline-installers
