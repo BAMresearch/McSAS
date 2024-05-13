@@ -1,4 +1,5 @@
-### Foreword ###
+# McSAS
+
 Welcome to McSAS: a tool for analysis of SAS patterns. 
 This tool can extract form-free size distributions from small-angle scattering data using the Monte-Carlo method described in:
 
@@ -7,7 +8,7 @@ Brian R. Pauw, Jan Skov Pedersen, Samuel Tardif, Masaki Takata, and Bo B. Iverse
 The GUI and latest improvements are described in:
 I. Breßler, B. R. Pauw, A. F. Thünemann, *"McSAS: A package for extracting quantitative form-free distributions"*. Journal of Applied Crystallography 48: 962-969, [DOI: 10.1107/S1600576715007347](http://dx.doi.org/10.1107/S1600576715007347)
 
-### Features ###
+## Features
 
 Several form factors have been included in the package, including:
 
@@ -25,41 +26,24 @@ Several form factors have been included in the package, including:
 
 - Densely packed spheres (LMA-PY structure factor). 
 
-### Current status ###
+## Standalone packages
 
-The package should run on a Python 3 installation, for example an Anaconda environment.
-Standalone packages are available for Windows, Linux and Mac OS X, make sure to get the latest release. 
+Standalone packages are available in the [Releases](https://bitbucket.org/pkwasniew/mcsas/downloads) section of this page in the right pane. 
+These are available for Mac OS X (tested on 10.6, 10.8 and 10.10), Windows and Linux. 
+and should not require any additional software to be installed on the host computer. 
 A quick start guide and example data is included in the "doc"-directory that comes with the distribution. 
 
-### Requirements ###
+## Run from source
 
-To run McSAS from the source code repository (i.e. using a Python interpreter), the following items are required:
+### Requirements
 
-- [Python 3](https://www.python.org/downloads/), with the following packages:
-- [Numpy](http://www.scipy.org/scipylib/download.html)
-- [Scipy](http://www.scipy.org/scipylib/download.html)
-- [matplotlib](http://matplotlib.org/downloads.html)
-- [PySide2](https://pypi.org/project/PySide2/)
+To run McSAS from the source code repository using an existing Python environment,
+there is a `requirements.txt` provided which contains the packages to be installed beforehand.
 
-#### Linux
-
-On Linux, there might also be the [ImageTk module](https://pillow.readthedocs.io/en/stable/reference/ImageTk.html) required.
-Install it like this on Debian/Ubuntu based systems:
-```
-sudo apt-get install python3-pil python3-pil.imagetk
-```
-
-### Installation on systems with a working Python distribution ###
-
-For those unfamiliar with the Git versioning system, there is [helpful reading material provided by GitHub](https://github.com/git-guides)
-and a somewhat easy to use graphical user interface [GitHub Desktop](https://desktop.github.com)
-along with [extensive documentation about it](https://docs.github.com/en/desktop).
-This is a GUI around the Git versioning system that simplifies the usage and allows you to get started quickly. 
+### Get a copy of the source code
 
 Use the green "Code" button in the top left area of this page to download a copy of the latest source code tree.
 Following this, McSAS can be started from a terminal window, as shown below:
-
-### Cloning and Starting McSAS from a terminal window
 
 1. Open a terminal window. Typically, it is opened in the current users home directory.
   You can change the current directory to `another/path` (which should exist) by entering
@@ -68,30 +52,39 @@ Following this, McSAS can be started from a terminal window, as shown below:
     ```
 2. Download a copy of the McSAS source code into the new directory `McSAS` using GIT:  
     (on Windows, [download & install GIT from here](https://git-scm.com/download/win))
-   
     ```
     $ git clone https://github.com/BAMresearch/McSAS.git
     ```
-    
-4. Change the current directory to the `src` subfolder:
-   
-    ```
-    cd McSAS/src
-    ```
-    
-6. Launch and start the McSAS GUI by calling it like a Python module:
-   
-    ```
-    python3 -m mcsas
-    ```
+### Linux
 
-Alternatively, on Windows systems, double-clicking the "main.py" file should start McSAS with the primary Python interpreter as well.
+1. On Linux, there might also be the [ImageTk module](https://pillow.readthedocs.io/en/stable/reference/ImageTk.html) required.
+   Install it like this on Debian/Ubuntu based systems:
+    ```
+    sudo apt install python3-pil.imagetk
+    ```
+2. Install the required packages
+    ```
+    cd McSAS
+    pip install -r requirements.txt
+    ```
+### Windows
 
-### Standalone packages ###
-Standalone packages are available in the [Releases](https://bitbucket.org/pkwasniew/mcsas/downloads) section of this page in the right pane. 
-These are available for Mac OS X (tested on 10.6, 10.8 and 10.10), Windows and Linux. 
-These do not require any additional software to be installed on the host computer. 
+1. Install the latest offline installer of the Qt5 series with defaults from here: https://www.qt.io/offline-installers
+   That would be [Qt 5.12.12 for Windows](https://download.qt.io/archive/qt/5.12/5.12.12/qt-opensource-windows-x86-5.12.12.exe).
 
-### Screenshots: ###
+2. Install Python 3.11 (the latest supported for PySide2) via [Miniconda from here](https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/), [this is the installer package](https://repo.anaconda.com/miniconda/Miniconda3-py311_24.3.0-0-Windows-x86_64.exe).
+
+3. After installing Miniconda, run _Anaconda Prompt_ from the Start Menu. Enter the McSAS project dir. Let's assume here, it's downloaded and extracted to `C:\McSAS`. Install the required packages with conda (make sure Qt was installed already for PySide2 to find the needed DLLs):
+    ```
+    cd /d C:\McSAS
+    conda install -c conda-forge --file requirements.txt
+    ```
+4. After successful installation of the packages, from the same _Anaconda Prompt_, run McSAS from source dir with:
+    ```
+    cd /d C:\McSAS\src
+    python -m mcsas
+    ```
+## Screenshots: ###
+
 ![McSAS20150111.png](https://bitbucket.org/repo/jkGXGq/images/2699194750-McSAS20150111.png)
 ![McSAS20150111Result.png](https://bitbucket.org/repo/jkGXGq/images/4000224154-McSAS20150111Result.png)
