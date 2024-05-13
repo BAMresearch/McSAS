@@ -83,7 +83,7 @@ def main(argv = None):
     mcsas.gui.calc.Calculator.nolog = args.nolog
 
     # initiate logging (to console stderr for now)
-    replaceStdOutErr() # replace all text output with our sinks
+#    replaceStdOutErr() # replace all text output with our sinks
 
     if not args.text:
         from mcsas.gui.mainwindow import eventLoop
